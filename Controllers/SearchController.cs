@@ -1,12 +1,8 @@
 ﻿using iaccess_test.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace iaccess_test.Controllers
 {
@@ -57,11 +53,11 @@ namespace iaccess_test.Controllers
         {
             List<SearchString> searchStringDummy = new List<SearchString>();
 
-            for(var i = 0; i < 100000; i++)
+            for (var i = 0; i < 100000; i++)
             {
-                int randomLength = new Random().Next(1000,2000);
+                int randomLength = new Random().Next(1000, 2000);
 
-                searchStringDummy.Add(new SearchString 
+                searchStringDummy.Add(new SearchString
                 {
                     StringContent = RandomString(randomLength)
                 });
@@ -96,7 +92,7 @@ namespace iaccess_test.Controllers
                 if (subs == searchString)
                 {
                     totalCount++;
-                } 
+                }
             }
 
             return totalCount.ToString();
